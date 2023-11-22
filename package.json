@@ -1,0 +1,69 @@
+{
+  "name": "shopify-nextjs-prisma-app",
+  "version": "0.0.1",
+  "type": "module",
+  "author": {
+    "name": "Baljeet  Singh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kinngh/shopify-nextjs-prisma-app.git"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "pretty": "prettier --write ./",
+    "update": "ncu -u",
+    "update:url": "node _developer/updateDashboard.js",
+    "ngrok:auth": "ngrok authtoken 2JZxL06F6O72GAAq41Ah8teXO4b_FQvaAUCc4j4NfPEK9k59",
+    "ngrok": "ngrok http 3000",
+    "-----> Shopify <-----": "",
+    "shopify": "shopify",
+    "s:e:create": "shopify app generate extension",
+    "s:e:deploy": "shopify app deploy",
+    "-----> Database <-----": "",
+    "pg:create": "mkdir database; pg_ctl -D database init",
+    "pg:start": "pg_ctl -D database start",
+    "pg:stop": "pg_ctl -D database stop",
+    "-----> Prisma <-----": "",
+    "prisma": "npx prisma",
+    "prisma:push": "npx prisma db push",
+    "prisma:pull": "npx prisma db pull",
+    "-----> Reserved Scripts <-----": "",
+    "prepare": "npx prisma generate"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.3.1",
+    "@shopify/polaris": "^11.19.0",
+    "@shopify/polaris-icons": "^7.9.0",
+    "@shopify/shopify-api": "^7.6.0",
+    "cryptr": "^6.3.0",
+    "next": "13.5.1",
+    "next-api-middleware": "^2.0.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "sweetalert2": "^11.7.31"
+  },
+  "devDependencies": {
+    "@shopify/app": "^3.49.3",
+    "@shopify/cli": "^3.49.3",
+    "@shopify/cli-kit": "^3.49.3",
+    "dotenv": "^16.3.1",
+    "ngrok": "^5.0.0-beta.2",
+    "npm-check-updates": "^16.14.4",
+    "prettier": "^3.0.3",
+    "prisma": "^5.3.1"
+  },
+  "overrides": {
+    "@shopify/cli-kit": {
+      "react": "18.2.0"
+    },
+    "@shopify/cli": {
+      "react": "18.2.0"
+    },
+    "@shopify/app": {
+      "react": "18.2.0"
+    }
+  }
+}

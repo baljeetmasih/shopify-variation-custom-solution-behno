@@ -1,0 +1,33 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model stores {
+  shop     String   @id
+  isActive Boolean? @default(false)
+}
+
+model session {
+  id      String  @id
+  content String? @db.Text
+  shop    String?
+}
+
+model pairs {
+  id         Int       @id @default(autoincrement())
+  shop       String?   @db.Text
+  ids        String?   @db.Text
+  title      String?   @db.Text
+  paragraph  String?   @db.Text
+  heading    String?   @db.Text
+  pairdata   Json?
+  actualdata Json?
+  reviewText String?   @db.Text
+  createdAt  DateTime? @default(now())
+  updatedAt  DateTime? @updatedAt
+}
